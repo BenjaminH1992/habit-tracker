@@ -1,7 +1,8 @@
 My Habit-tracker concept
 
 Goals:
-track 5 habits #User should be able to define the specific habits he/she wants to track
+track 5 habits.
+The User should be able to define the specific habits he/she wants to track
 habits should be trackable with different periodicities i.e. daily and weekly
 completing habits without interruptions should create a streak
 // think about some kind of reward for completing streaks 
@@ -19,3 +20,6 @@ On Opening Up the App: Welcome Text "Welcome to your personal Habit Tracker App 
     #Option 4: Checkin to complete a Habit // shift to option 2
     #Option 5: Show rewards //User receives Rewards <Stars> vor every 7day Streak (daily) // 4week Streak (Weekly) 
     #Option 6: Delete a Habit // you really want to delete <habit>?
+
+    Save Habits to a file
+    read file for analytics
