@@ -1,6 +1,7 @@
 # Habit Tracker (CLI)
 Backend habit tracking application developed for  
 **Object Oriented and Functional Programming with Python**
+ 
 Author Benjamin Herrmann IU14136471
 
 ---------------
