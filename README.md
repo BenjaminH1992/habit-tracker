@@ -30,8 +30,8 @@ You can obtain the project in one of the following ways:
 If you have Git installed, run:
 ```bash
 git clone https://github.com/BenjaminH1992/habit-tracker.git
+cd habit-tracker
 ```
-git clone https://github.com/BenjaminH1992/habit-tracker
 
 ### Option 2: Download as ZIP
 Alternatively, you can download the project as a ZIP file from GitHub
@@ -90,8 +90,9 @@ habit-tracker/
 │   └─ test_repository.py
 │
 ├─ docs/
-│   ├─ concept_phase.pdf
-│   └─ development_phase.pdf
+│   ├─ 01_Concept phase_Benjamin_Herrmann_IU14136471.pdf
+│   ├─ 02_Development Phase_Presentation_Benjamin Herrmann_IU14136471.pdf
+|   └─ 03_Finalization phase_Benjamin_Herrmann_Habit Tracker_IU14136471.pdf
 │
 ├─ seed_data.py
 ├─ README.md
@@ -111,7 +112,9 @@ Analytical:
 
 ## How to run tests
 Run the following from the Project Root:
+```bash
 python -m pytest
+```
 
 The test suite verifies both standard usage scenarios and selected edge cases.
 The test suite verifies:
