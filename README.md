@@ -59,44 +59,30 @@ The application provides a menu-driven interface that allows users to:
 After displaying analytical results, the application pauses and waits for user input before returning to the main menu to improve readability.
 
 ## Project Structure
-habit_tracker/
-    main.py         # CLI and application flow
-    db.py           # Database setup and connection
-    repository.py   # Database access layer
-    analytics.py    # Functional analytics logic
-    habit.py        # Habit domain class
-
-tests/
-    test_analytics.py
-    test_repository.py
-
-docs/
-    01_conceptional.pdf
-    02_development.pdf
-    03_finalization.pdf
 
 ```text
 habit-tracker/
 │
-├─ habit_tracker/
-│   ├─ main.py
-│   ├─ db.py
-│   ├─ repository.py
-│   ├─ analytics.py
-│   └─ habit.py
+├─ habit_tracker/          # Application source code (Python package)
+│   ├─ __init__.py         # Marks the directory as a Python package
+│   ├─ main.py             # CLI and application flow
+│   ├─ db.py               # Database setup and connection
+│   ├─ repository.py       # Database access layer
+│   ├─ analytics.py        # Functional analytics logic
+│   └─ habit.py            # Habit domain class
 │
-├─ tests/
+├─ tests/                  # Unit tests using pytest
 │   ├─ test_analytics.py
 │   └─ test_repository.py
 │
-├─ docs/
+├─ docs/                   # Course documentation and submissions
 │   ├─ 01_Concept phase_Benjamin_Herrmann_IU14136471.pdf
 │   ├─ 02_Development Phase_Presentation_Benjamin Herrmann_IU14136471.pdf
-|   └─ 03_Finalization phase_Benjamin_Herrmann_Habit Tracker_IU14136471.pdf
+│   └─ 03_Finalization phase_Benjamin_Herrmann_Habit Tracker_IU14136471.pdf
 │
-├─ seed_data.py
-├─ README.md
-└─ .gitignore
+├─ seed_data.py            # Script to generate demo / fixture data
+├─ README.md               # Project documentation
+└─ .gitignore              # Git ignore rules
 ```
 
 ## Architecture
