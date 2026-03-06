@@ -46,15 +46,15 @@ python -m habit_tracker.main
 The SQLite database is created automatically on first run.
 No manual database setup is required.
 
-## Main Menu Features
+## Application Features
 The application provides a menu-driven interface that allows users to:
 - Add Habits (daily or weekly)
-- check off habits
-- view current streaks
-- view longest streaks
-- view earned rewards
-- delete habits
-- exit the application 
+- Check off habits
+- View current streaks
+- View longest streaks
+- View earned rewards
+- Delete habits
+- Exit the application 
 
 After displaying analytical results, the application pauses and waits for user input before returning to the main menu to improve readability.
 
