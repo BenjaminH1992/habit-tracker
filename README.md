@@ -90,29 +90,26 @@ habit-tracker/
 ```
 
 ## Architecture
-- Habit class > Domain model
-- Repository layer > Database access abstraction
-- Analytics module > Pure functional streak calculations
-- SQLite database > Persistent storage
+The system follows a modular architecture with clearly separated responsibilities:
+- Habit class: Domain model representing a habit
+- Repository layer: Database access abstraction for storing and retrieving habits and check-offs
+- Analytics module: Pure functional logic for streak and reward calculations
+- CLI module: Command-line interface handling user interaction and workflow
 
 The analytics module is implemented using functional programming principles and is tested independently.
 
-Analytical:
-“After displaying analytical results, the application pauses and waits for user input before returning to the main menu to improve readability.”
-
 ## How to run tests
-Run the following from the Project Root:
+Run the following command from the project root:
 ```bash
 python -m pytest
 ```
 
-The test suite verifies both standard usage scenarios and selected edge cases.
 The test suite verifies:
-- Current streak calculations
-- Longest streak calculations
+- Analytics calculations (current streaks and longest streaks)
 - Repository database operations
-- Selected edge cases
+- Edge cases such as empty datasets and gaps in streaks
 
+Tests use an in-memory SQLite database to ensure that they do not modify the application's persistent data.
 Successful execution confirms the correctness and robustness of the core system components.
 
 ## Demo / Fixture Data (5 habits + 4 weeks)
