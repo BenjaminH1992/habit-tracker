@@ -117,7 +117,9 @@ Successful execution confirms the correctness and robustness of the core system 
 
 ## Demo / Fixture Data (5 habits + 4 weeks)
 To generate predefined habits and example checkoff data, run:
+```bash
 python seed_data.py
+```
 
 This will:
 - Create 5 predefined habits (daily and weekly)
