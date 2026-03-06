@@ -78,8 +78,8 @@ habit-tracker/
 │
 ├─ docs/                   # Course documentation and submissions
 │   ├─ 01_Concept phase_Benjamin_Herrmann_IU14136471.pdf
-│   ├─ 02_Development Phase_Presentation_Benjamin Herrmann_IU14136471.pdf
-│   └─ 03_Finalization phase_Benjamin_Herrmann_Habit Tracker_IU14136471.pdf
+│   ├─ 02_Development phase_Presentation_Benjamin_Herrmann_IU14136471.pdf
+│   └─ 03_Finalization phase_Habit_Tracker_Benjamin_Herrmann_IU14136471.pdf
 │
 ├─ data/                   # Directory for runtime data (database and user files created at runtime)
 │   └─ .gitkeep
