@@ -7,13 +7,12 @@ from .analytics import current_streak, longest_streak_for_habit, total_sparkles_
 
 
 db_path = "data/habits.sqlite"
-username_file_path = "usernamedata.txt"
-habit_file_path = "habit.csv"
+username_file_path = "data/usernamedata.txt"
 
 #Get user input for Username and write it to a file for next Launch to remember the name 
 def get_username():
     #check if the file already exists
-    username_file_path = "usernamedata.txt"
+    username_file_path = "data/usernamedata.txt"
     if os.path.exists(username_file_path):
         with open(username_file_path, "r") as file:
             username = file.read().strip()
