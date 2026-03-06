@@ -75,6 +75,29 @@ docs/
     02_development.pdf
     03_finalization.pdf
 
+```text
+habit-tracker/
+│
+├─ habit_tracker/
+│   ├─ main.py
+│   ├─ db.py
+│   ├─ repository.py
+│   ├─ analytics.py
+│   └─ habit.py
+│
+├─ tests/
+│   ├─ test_analytics.py
+│   └─ test_repository.py
+│
+├─ docs/
+│   ├─ concept_phase.pdf
+│   └─ development_phase.pdf
+│
+├─ seed_data.py
+├─ README.md
+└─ .gitignore
+```
+
 ## Architecture
 - Habit class > Domain model
 - Repository layer > Database access abstraction
