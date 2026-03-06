@@ -113,7 +113,7 @@ Tests use an in-memory SQLite database to ensure that they do not modify the app
 Successful execution confirms the correctness and robustness of the core system components.
 
 ## Demo / Fixture Data (5 habits + 4 weeks)
-To generate predefined habits and example checkoff data, run:
+To generate predefined habits and example checkoff data, run the following command from the project root:
 ```bash
 python seed_data.py
 ```
