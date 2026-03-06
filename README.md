@@ -28,7 +28,9 @@ You can obtain the project in one of the following ways:
 
 ### Option 1: Clone the repository (recommended)
 If you have Git installed, run:
-
+```bash
+git clone https://github.com/BenjaminH1992/habit-tracker.git
+```
 git clone https://github.com/BenjaminH1992/habit-tracker
 
 ### Option 2: Download as ZIP
@@ -37,7 +39,9 @@ and extract it to a folder on your system.
 
 ## How to run the Application
 Run the application from the project root:
+```bash
 python -m habit_tracker.main
+```
 
 The SQLite database is created automatically on first run.
 No manual database setup is required.
