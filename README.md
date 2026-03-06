@@ -80,6 +80,9 @@ habit-tracker/
 │   ├─ 02_Development Phase_Presentation_Benjamin Herrmann_IU14136471.pdf
 │   └─ 03_Finalization phase_Benjamin_Herrmann_Habit Tracker_IU14136471.pdf
 │
+├─ data/                   # Directory reserved for runtime data
+│   └─ .gitkeep
+│
 ├─ seed_data.py            # Script to generate demo / fixture data
 ├─ README.md               # Project documentation
 └─ .gitignore              # Git ignore rules
