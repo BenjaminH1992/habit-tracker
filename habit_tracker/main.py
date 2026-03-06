@@ -6,7 +6,7 @@ from .repository import HabitRepository
 from .analytics import current_streak, longest_streak_for_habit, total_sparkles_from_habits, convert_sparkles 
 
 
-db_path = "habits.sqlite"
+db_path = "data/habits.sqlite"
 username_file_path = "usernamedata.txt"
 habit_file_path = "habit.csv"
 
