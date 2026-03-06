@@ -40,7 +40,7 @@ and extract it to a folder on your system.
 ## How to run the Application
 Run the application from the project root:
 ```bash
-python -m habit_tracker.main
+python -m habit_tracker/main.py
 ```
 
 The SQLite database is created automatically on first run.
