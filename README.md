@@ -37,7 +37,7 @@ and extract it to a folder on your system.
 
 ## How to run the Application
 Run the application from the project root:
-python habit_tracker/main.py
+python -m habit_tracker.main
 
 The SQLite database is created automatically on first run.
 No manual database setup is required.
@@ -52,7 +52,7 @@ The application provides a menu-driven interface that allows users to:
 - delete habits
 - exit the application 
 
-Ater displaying anaytical results, the application pauses and waits for user input before returing to the main menu to improve readability.
+After displaying analytical results, the application pauses and waits for user input before returning to the main menu to improve readability.
 
 ## Project Structure
 habit_tracker/
@@ -67,9 +67,9 @@ tests/
     test_repository.py
 
 docs/
-    01_conceptional.md
-    02_development.md
-    03_finalization.md
+    01_conceptional.pdf
+    02_development.pdf
+    03_finalization.pdf
 
 ## Architecture
 - Habit class > Domain model
@@ -100,14 +100,14 @@ To generate predefined habits and example checkoff data, run:
 python seed_data.py
 
 This will:
-- Create 5 predifned habits (daily and weekly)
+- Create 5 predefined habits (daily and weekly)
 - Insert 4 weeks of sample tracking data
 - Allow immediate testing of streak analytics and rewards
 
 ## Technologies Used
 - Python 3
 - SQLite (via sqlite3 module)
-- pytest (init testing)
+- pytest (unit testing)
 - Git & Github
 - Visual Studio Code
 
