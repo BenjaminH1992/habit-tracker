@@ -29,7 +29,7 @@ You can obtain the project in one of the following ways:
 ### Option 1: Clone the repository (recommended)
 If you have Git installed, run:
 
-git clone https://github.com/your-username/habit-tracker.git
+git clone https://github.com/BenjaminH1992/habit-tracker
 
 ### Option 2: Download as ZIP
 Alternatively, you can download the project as a ZIP file from GitHub
