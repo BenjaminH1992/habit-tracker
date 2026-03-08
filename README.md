@@ -47,6 +47,10 @@ python -m habit_tracker.main
 The SQLite database is created automatically on first run.
 No manual database setup is required.
 
+## Predefined Habits
+The application automatically creates five predefined habits on first launch (three daily and two weekly).  
+These habits can be tracked, analyzed, or deleted like any user-created habit.
+
 ## Application Features
 The application provides a menu-driven interface that allows users to:
 - Add Habits (daily or weekly)
@@ -55,6 +59,8 @@ The application provides a menu-driven interface that allows users to:
 - View longest streaks
 - View earned rewards
 - Delete habits
+- Show all tracked habits
+- Show habits by periodicity
 - Exit the application 
 
 After displaying analytical results, the application pauses and waits for user input before returning to the main menu to improve readability.
