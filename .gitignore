@@ -1,8 +1,8 @@
 # Habit Tracker project specific
-habits.sqlite
-usernamedata.txt
+data/habits.sqlite
+data/usernamedata.txt
 
-# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files / Python cache
 __pycache__/
 *.py[codz]
 *$py.class

@@ -1,2 +1,0 @@
-Tests: Tests are organized in a separate tests directory and import application modules directly
-By increasing the number and variety of test cases, confidence in the correctness and robustness of the analytics and persistence logic is improved.
