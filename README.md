@@ -55,12 +55,12 @@ These habits can be tracked, analyzed, or deleted like any user-created habit.
 The application provides a menu-driven interface that allows users to:
 - Add Habits (daily or weekly)
 - Check off habits
-- View current streaks
-- View longest streaks
-- View earned rewards
-- Delete habits
+- Show current streaks
+- Show longest streaks
 - Show all tracked habits
 - Show habits by periodicity
+- Show earned rewards
+- Delete habits
 - Exit the application 
 
 After displaying analytical results, the application pauses and waits for user input before returning to the main menu to improve readability.
