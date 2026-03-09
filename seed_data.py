@@ -4,7 +4,7 @@ import sqlite3
 from habit_tracker.db import connect, init_db
 from habit_tracker.repository import HabitRepository
 
-DB_PATH = "habits.sqlite"
+DB_PATH = "data/habits.sqlite"
 
 
 def iso(dt: datetime) -> str:

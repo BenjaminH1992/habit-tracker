@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
-
-from habit_tracker.analytics import current_streak, longest_streak_for_habit
+from habit_tracker.habit import Habit 
+from habit_tracker.analytics import current_streak, longest_streak_for_habit, habits_by_periodicity
 
 
 def make_daily_checkoffs(days: int):
@@ -50,3 +50,15 @@ def test_daily_streak_with_gap():
 
 def test_no_checkoffs():
     assert current_streak("daily", []) == 0
+
+def test_habits_by_periodicity_daily():
+    habits = [
+        Habit(habit_id=1, name="Drink Water", category="daily", created_at="2026-01-01"),
+        Habit(habit_id=2, name="Brush Teeth", category="daily", created_at="2026-01-01"),
+        Habit(habit_id=3, name="Gym Workout", category="weekly", created_at="2026-01-01"),
+    ]
+
+    result = habits_by_periodicity(habits, "daily")
+
+    assert len(result) == 2
+    assert all(h.category == "daily" for h in result)

@@ -3,17 +3,16 @@ import os
 import random
 from .db import connect, init_db
 from .repository import HabitRepository
-from .analytics import current_streak, longest_streak_for_habit, total_sparkles_from_habits, convert_sparkles 
+from .analytics import current_streak, longest_streak_for_habit, total_sparkles_from_habits, convert_sparkles, habits_by_periodicity 
 
 
-db_path = "habits.sqlite"
-username_file_path = "usernamedata.txt"
-habit_file_path = "habit.csv"
+db_path = "data/habits.sqlite"
+username_file_path = "data/usernamedata.txt"
 
 #Get user input for Username and write it to a file for next Launch to remember the name 
 def get_username():
     #check if the file already exists
-    username_file_path = "usernamedata.txt"
+    username_file_path = "data/usernamedata.txt"
     if os.path.exists(username_file_path):
         with open(username_file_path, "r") as file:
             username = file.read().strip()
@@ -44,7 +43,21 @@ def greet_user(username):
 #Pause for return to Main Menu
 def pause():
     input("Press Enter to return to the main menu...")
- 
+
+#predefined habits to get started with and to show the user how the app works. Only added if they don't already exist in the database to prevent duplicates on every launch. 
+def ensure_predefined_habits(repo):
+    predefined_habits = [
+        ("Drink Water", "daily"),
+        ("Brush Teeth", "daily"),
+        ("Read 10 Pages", "daily"),
+        ("Gym Workout", "weekly"),
+        ("Call Family", "weekly"),
+    ]
+
+    for name, category in predefined_habits:
+        if not repo.habit_name_exists(name):
+            repo.create_habit(name, category)
+             
 #Get User action        
 def get_user_action():
     print("\n=== Main Menu ===")
@@ -52,8 +65,10 @@ def get_user_action():
     print("2. Check a habit")
     print("3. Show streaks for a habit")
     print("4. Show longest streaks")
-    print("5. Show my rewards")
-    print("6. Delete a habit")
+    print("5. Show habits by periodicity")
+    print("6. Show all habits")
+    print("7. Show my rewards")
+    print("8. Delete a habit")
     print("0. Exit")
 
     choice = input("Please select an option: ")
@@ -98,7 +113,7 @@ def select_habit(repo):
         print("No habits found. Please add one first.")
         return None
 
-    print("\nSelect a habit to check off:")
+    print("\nSelect a habit:")
     for h in habits:
         print(f"{h.id}. {h.name} [{h.category}]")
 
@@ -204,7 +219,61 @@ def show_rewards(repo):
 
     pause()
 
-#6. delete a habit
+#6. Show all habits
+def show_all_habits(repo):
+    habits = repo.list_habits()
+
+    if not habits:
+        print("No habits found.")
+        pause()
+        return
+
+    print("\n📋 All tracked habits:")
+    for habit in habits:
+        print(f"- {habit.name} [{habit.category}]")
+
+    pause()
+
+#7. Show habits by periodicity 
+def show_habits_by_periodicity(repo):
+    habits = repo.list_habits()
+    if not habits:
+        print("No habits found.")
+        pause()
+        return
+
+    print("\nSelect periodicity:")
+    print("1. Daily")
+    print("2. Weekly")
+    print("0. Cancel")
+
+    choice = input("Choose an option: ").strip()
+
+    if choice == "0":
+        print("Cancelled. Returning to main menu.")
+        pause()
+        return
+    elif choice == "1":
+        periodicity = "daily"
+    elif choice == "2":
+        periodicity = "weekly"
+    else:
+        print("Invalid option.")
+        pause()
+        return
+
+    filtered = habits_by_periodicity(habits, periodicity)
+
+    print(f"\n📂 {periodicity.capitalize()} habits:")
+    if not filtered:
+        print("No habits found for this periodicity.")
+    else:
+        for habit in filtered:
+            print(f"- {habit.name} [{habit.category}]")
+
+    pause()
+
+#8. Delete a habit
 def delete_habit(repo):
     habit = select_habit(repo)
     if habit is None:
@@ -236,6 +305,9 @@ def main():
     conn = connect(db_path)
     init_db(conn)
     repo = HabitRepository(conn)
+
+    #ensure predefined habits exist
+    ensure_predefined_habits(repo)
 
     while True:
         user_choice = get_user_action() #collect user input on what to do (from Main Menu)
@@ -281,9 +353,15 @@ def main():
             show_longest_streak(repo)
 
         elif user_choice == "5":
+            show_habits_by_periodicity(repo)
+        
+        elif user_choice == "6":
+            show_all_habits(repo)
+
+        elif user_choice == "7":
             show_rewards(repo)
 
-        elif user_choice == "6":
+        elif user_choice == "8":
             delete_habit(repo)
 
         elif user_choice == "0":

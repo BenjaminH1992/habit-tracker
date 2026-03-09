@@ -151,6 +151,12 @@ def longest_streak_for_habit(periodicity: str, checkoffs: List[str]) -> int:
 
     raise ValueError("periodicity must be 'daily' or 'weekly'")
 
+    #Habits filtered by periodicity (daily or weekly)
+def habits_by_periodicity(habits, periodicity: str):
+    periodicity = periodicity.strip().lower()
+    return [h for h in habits if h.category == periodicity]
+
+
 def total_sparkles_from_habits(habits, get_checkoffs_for_habit) -> int:
     """
     Returns total sparkles across all habits.
